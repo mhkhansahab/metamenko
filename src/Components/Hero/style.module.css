@@ -1,0 +1,34 @@
+.section {
+    height: 100vh;
+    background: #EEEEEE;
+    position: relative;
+}
+
+.sectionBody {
+    font-family: 'Space Mono', monospace;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Space Mono';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 15px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #4B3479;
+}
+
+.metamenkoLogo {
+    width: 277px;
+}
+
+.sushiLogo {
+    width: 105px;
+}
