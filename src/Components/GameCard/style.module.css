@@ -1,0 +1,28 @@
+.card {
+    padding: 10px;
+    background: #FFFFFF;
+    border: 1px solid rgba(38, 38, 38, 0.25);
+    width: fit-content;
+    margin: 3px;
+}
+
+.name {
+    font-family: 'Squada One', cursive;
+    font-weight: 400;
+    font-size: 12px;
+}
+
+.profession {
+    font-family: 'Space Mono', monospace;
+    font-weight: 400;
+    font-size: 10px;
+    margin-top: 2px;
+}
+
+.img{
+    margin-top: 8px;
+}
+
+.img > img{
+    width: 68px;
+}

@@ -1,19 +1,80 @@
 import './App.css';
-import Navbar from './Components/Navbar/index';
-import metamenkoLogo from './Assets/Images/metamenko-logo.png';
-import sushiLogo from './Assets/Images/sushi.png';
+import Hero from './Components/Hero/index';
+import SectionOne from './Components/SectionOne/index';
+import SectionTwo from './Components/SectionTwo/index';
+import SectionThree from './Components/SectionThree/index';
+import Footer from './Components/Footer/index';
+import img1 from './Assets/Images/Avatars/1.png';
+import img2 from './Assets/Images/Avatars/2.png';
+import img3 from './Assets/Images/Avatars/3.png';
+import img4 from './Assets/Images/Avatars/4.png';
+import img5 from './Assets/Images/Avatars/5.png';
+import img6 from './Assets/Images/Avatars/6.png';
+import img7 from './Assets/Images/Avatars/7.png';
+import img8 from './Assets/Images/Avatars/8.png';
+import img9 from './Assets/Images/Avatars/9.png';
+import img10 from './Assets/Images/Avatars/10.png';
+import pie1 from './Assets/Images/EggPies/1.png';
+import pie2 from './Assets/Images/EggPies/2.png';
+import pie3 from './Assets/Images/EggPies/3.png';
+import pie4 from './Assets/Images/EggPies/4.png';
 
 function App() {
+
+  const avatarDetails = [
+    { name: 'DR.S', profession: 'PRODUCT', img: img1 },
+    { name: 'CRYPTOSHAKE', profession: 'DESIGN', img: img2 },
+    { name: 'SENSAI', profession: 'COMMUNITY', img: img3 },
+    { name: 'FATIMA', profession: 'ARTIST', img: img4 },
+    { name: 'AFSHIN', profession: 'ARTIST', img: img5 },
+    { name: 'RAJ', profession: 'BACKEND', img: img6 },
+    { name: 'ARROW', profession: 'GAME', img: img7 },
+    { name: 'VICEROY', profession: 'ANIMATION', img: img8 },
+    { name: 'MURAD', profession: 'WRITING', img: img9 },
+    { name: 'BOAZ', profession: 'WRITING', img: img10 },
+  ];
+
+  const valuesInfo = [
+    {
+      index: '01', title: 'PRINCIPLES', img: pie1,
+      content: [
+        { text: 'Building for the future', bold: true },
+        { text: 'We’re not trying to be the “next” anything, we’re just trying to be the best version of us. We want to raise the level for nfts and gaming across the ecosystem and set a new bar.', bold: false },
+        { text: 'We want to create one of the largest collaborative communities focused on gaming. We’d like  formalize into a DAO to ensure the community continues the drive the future of this brand.', bold: false }]
+    },
+    {
+      index: '02', title: 'BRIDGING', img: pie2,
+      content: [
+        { text: 'We’ll be releasing our digital mystery packs that grant you access to the Menkoverse and all the worlds within it. You’ll need these Menkos to access the next stage of the journey and participe in the Proof of Gaming protocol. We’ll also be releasing Menko-games that will be played within the community in order to unlock new experiences.', bold: false }
+      ]
+    },
+    {
+      index: '03', title: 'PROOF OF GAMING', img: pie3,
+      content: [
+        { text: 'Utility through gaming', bold: true },
+        { text: 'Our emphasis is on gaming and we want to reward those who want to participate and hold. This is where you’ll be able to evolve your Menkos and upgrade their tiers as well.', bold: false }
+      ]
+    },
+    {
+      index: '04', title: 'THE MENKOVERSE & BEYOND', img: pie4,
+      content: [
+        { text: 'Portal to the worlds', bold: true },
+        { text: 'The Menkoverse is the final piece of the puzzle. We’ll be releasing', bold: false },
+        { text: 'We also want to expamd our IP beyond our game. We want to allow ownership in the charavters themselves and let the community dictate their stories.', bold: false },
+      ]
+    },
+  ];
+
+
   return (
-    <div className="App">
-      <div className='section-1'>
-        <Navbar/>
-        <div className='section-1-body'>
-          <img src={metamenkoLogo} alt='Metamenko Logo' className='metamenko-logo'/>
-          <img src={sushiLogo} alt='Sushi' className='sushi-logo'/>
-          <span>UNRAVEL THE MYSTERY</span>
-        </div>
+    <div>
+      <Hero />
+      <div className='bodySection'>
+        <SectionOne />
+        <SectionTwo avatarDetails={avatarDetails} />
+        <SectionThree valuesInfo={valuesInfo} />
       </div>
+      <Footer/>
     </div>
   );
 }

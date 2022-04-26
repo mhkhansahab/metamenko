@@ -1,0 +1,29 @@
+.section{
+    display: flex;
+    flex-direction: column;
+    padding: 60px 0px;
+}
+
+.heading{
+    font-family: 'Squada One', cursive;
+    font-size: 36px;
+}
+
+.content{
+    font-family: 'Space Mono', monospace;
+    font-weight: 400;
+    font-size: 13px;
+    color: #262626;
+    line-height: 24px;
+}
+
+.content > div{
+    margin-top: 18px;
+}
+
+.avatarContainer{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}

@@ -1,0 +1,31 @@
+.card{
+    font-family: 'Squada One', cursive;
+    font-weight: 400;
+    background-color: #FFFFFF;
+    width: 140px;
+    height: 152px;
+    margin: 2px;
+    position: relative;
+    overflow: hidden;
+}
+
+.index{
+    color: #262626;
+    margin: 20px 0px 0px 20px;
+}
+
+.title{
+    color: rgba(38, 38, 38, 0.4);
+    margin-left: 20px;
+}
+
+.img{
+    opacity: 0.5;
+    position: absolute;
+    bottom: -45px;
+    right: -45px;
+}
+
+.img > img{
+    width: 143px;
+}

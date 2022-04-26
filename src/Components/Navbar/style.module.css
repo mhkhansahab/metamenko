@@ -2,21 +2,23 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 40px;
+    padding: 20px 30px;
     color: #382D72;
 }
-.navIcon {
-    display: none;
-    margin-left: 30px;
-    cursor: pointer;
-}
 
-.metamenkoLogo {
+.navIcon {
+    display: block;
+    margin-left: 30px;
     cursor: pointer;
 }
 
 .links {
     margin-left: 200px;
+    display: none;
+}
+
+.metamenkoLogo {
+    cursor: pointer;
 }
 
 .links ul {
@@ -32,28 +34,30 @@
     font-weight: 700;
     font-size: 12px;
     cursor: pointer;
-     line-height: 22px;
+    line-height: 22px;
     text-align: center;
     text-transform: capitalize;
 }
-.links ul li{
+
+.links ul li {
     margin: 10px 20px;
 }
 
-.links ul li:last-child{
+.links ul li:last-child {
     margin-right: 0px;
 }
 
-.links ul li::after{
+.links ul li::after {
     content: '';
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color:  rgba(0, 0, 0, 0.05);
+    background-color: rgba(0, 0, 0, 0.05);
     height: 1px;
     margin-top: 5px;
 }
+
 .links ul li a {
     color: #382D72;
 }
@@ -66,16 +70,13 @@
     text-decoration: none;
 }
 
-@media screen and (max-width: 1140px) {
+@media screen and (min-width: 720px) {
     .navbar {
-        padding: 20px 30px;
+        padding: 20px 40px;
+
     }
 
     .navIcon {
-        display: block;
-    }
-
-    .links {
         display: none;
     }
 }
