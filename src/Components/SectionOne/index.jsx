@@ -1,5 +1,6 @@
 import React from 'react';
 import classes from './style.module.css';
+import smallSwords from './../../Assets/Images/small-swords.png';
 
 function Index() {
     return (
@@ -15,6 +16,8 @@ function Index() {
                     <div>The Menkoverse consists of reimagined worlds that crossover in the digital and physical realm. The intersection of the two is still yet to take shape.</div>
                     <div>See you in the Menkoverse. </div>
                     <div style={{marginTop: '0px'}}><b>Some of us are already there.</b></div>
+                    <div className={classes.smallSwords}><img src={smallSwords} alt='Small Swords' /></div>
+
                 </div>
             </div>
             <div style={{marginTop: '50px'}}>
