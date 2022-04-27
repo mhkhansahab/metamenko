@@ -1,5 +1,4 @@
 import React from 'react';
-import Navbar from './../Navbar/index';
 import metamenkoLogo from './../../Assets/Images/metamenko-logo.png';
 import sushiLogo from './../../Assets/Images/sushi.png';
 import classes from './style.module.css';
@@ -8,7 +7,6 @@ import classes from './style.module.css';
 function Index() {
     return (
         <div className={classes.section}>
-        <Navbar/>
         <div className={classes.sectionBody}>
           <img src={metamenkoLogo} alt='Metamenko Logo' className={classes.metamenkoLogo}/>
           <img src={sushiLogo} alt='Sushi' className={classes.sushiLogo}/>

@@ -26,4 +26,61 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    position: relative;
+}
+
+.detailContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: absolute;
+    top :0;
+    left: 0;
+    background-color: #FFFFFF;
+    padding: 20px;
+}
+
+.index{
+    color: #262626;
+    font-family: 'Squada One', cursive;
+    font-weight: 400;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.title{
+    color: rgba(38, 38, 38, 0.4);
+    font-family: 'Squada One', cursive;
+    font-weight: 400;
+    font-size: 20px;
+    margin-bottom: 12px;
+
+}
+
+.cancelIcon{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    width: 20px;
+}
+
+.detailContainer>div:last-child{
+    font-family: 'Space Mono', monospace;
+    font-weight: 400;
+    font-size: 14px;
+    color: #262626;
+    line-height: 24px;
+}
+
+.detailContainer>div:last-child > div{
+    margin-bottom: 18px;
+}
+
+.cardImage{
+    text-align: right;
+}
+
+.cardImage > img{
+    width: 143px;
 }

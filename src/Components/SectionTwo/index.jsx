@@ -16,7 +16,7 @@ function Index({ avatarDetails }) {
                 <div className={classes.avatarContainer}>
                     {
                         avatarDetails?.map((detail,index)=>{
-                            return <GameCard name={detail?.name} profession={detail?.profession} img={detail?.img}/> 
+                            return <GameCard key={index} name={detail?.name} profession={detail?.profession} img={detail?.img}/> 
                         })
                          
                     }

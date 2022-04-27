@@ -1,4 +1,6 @@
+import { Routes, Route, Link, useLocation } from "react-router-dom";
 import './App.css';
+import Navbar from './Components/Navbar/index';
 import Hero from './Components/Hero/index';
 import SectionOne from './Components/SectionOne/index';
 import SectionTwo from './Components/SectionTwo/index';
@@ -20,6 +22,7 @@ import pie3 from './Assets/Images/EggPies/3.png';
 import pie4 from './Assets/Images/EggPies/4.png';
 
 function App() {
+  let location = useLocation();
 
   const avatarDetails = [
     { name: 'DR.S', profession: 'PRODUCT', img: img1 },
@@ -65,16 +68,20 @@ function App() {
     },
   ];
 
-
   return (
     <div>
-      <Hero />
-      <div className='bodySection'>
-        <SectionOne />
-        <SectionTwo avatarDetails={avatarDetails} />
-        <SectionThree valuesInfo={valuesInfo} />
+      <Navbar color={location?.pathname === '/team' ? '#F8F8F8': '#EEEEEE'}/>
+      <Routes>
+        <Route path="/" element={<Hero />} />
+      </Routes>
+      <div className='bodySection' style={{backgroundColor: location?.pathname === '/minimap' ?'#EEEEEE' :  '#F8F8F8'}}>
+        <Routes>
+          <Route path="/" element={<SectionOne />} />
+          <Route path="team" element={<SectionTwo avatarDetails={avatarDetails} />} />
+          <Route path="/minimap" element={<SectionThree valuesInfo={valuesInfo} />} />
+        </Routes>
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 }
