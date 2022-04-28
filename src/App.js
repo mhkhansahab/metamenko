@@ -25,16 +25,16 @@ function App() {
   let location = useLocation();
 
   const avatarDetails = [
-    { name: 'DR.S', profession: 'PRODUCT', img: img1 },
-    { name: 'CRYPTOSHAKE', profession: 'DESIGN', img: img2 },
-    { name: 'SENSAI', profession: 'COMMUNITY', img: img3 },
-    { name: 'FATIMA', profession: 'ARTIST', img: img4 },
-    { name: 'AFSHIN', profession: 'ARTIST', img: img5 },
-    { name: 'RAJ', profession: 'BACKEND', img: img6 },
-    { name: 'ARROW', profession: 'GAME', img: img7 },
-    { name: 'VICEROY', profession: 'ANIMATION', img: img8 },
-    { name: 'MURAD', profession: 'WRITING', img: img9 },
-    { name: 'BOAZ', profession: 'WRITING', img: img10 },
+    { name: 'DR.S', profession: 'PRODUCT', img: img1, description: '' },
+    { name: 'CRYPTOSHAKE', profession: 'DESIGN', img: img2, description: '' },
+    { name: 'SENSAI', profession: 'COMMUNITY', img: img3, description: '' },
+    { name: 'FATIMA', profession: 'ARTIST', img: img4, description: '' },
+    { name: 'AFSHIN', profession: 'ARTIST', img: img5, description: '' },
+    { name: 'RAJ', profession: 'BACKEND', img: img6, description: '' },
+    { name: 'ARROW', profession: 'GAME', img: img7, description: '' },
+    { name: 'VICEROY', profession: 'ANIMATION', img: img8, description: '' },
+    { name: 'MURAD', profession: 'WRITING', img: img9, description: '' },
+    { name: 'BOAZ', profession: 'WRITING', img: img10, description: '' },
   ];
 
   const valuesInfo = [
@@ -70,11 +70,11 @@ function App() {
 
   return (
     <div>
-      <Navbar color={location?.pathname === '/team' ? '#F8F8F8': '#EEEEEE'}/>
+      <Navbar color={location?.pathname === '/team' ? '#F8F8F8' : '#EEEEEE'} />
       <Routes>
         <Route path="/" element={<Hero />} />
       </Routes>
-      <div className='bodySection' style={{backgroundColor: location?.pathname === '/minimap' ?'#EEEEEE' :  '#F8F8F8'}}>
+      <div className='bodySection' style={{ backgroundColor: location?.pathname === '/minimap' ? '#EEEEEE' : '#F8F8F8' }}>
         <Routes>
           <Route path="/" element={<SectionOne />} />
           <Route path="team" element={<SectionTwo avatarDetails={avatarDetails} />} />
