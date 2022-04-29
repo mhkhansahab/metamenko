@@ -14,7 +14,7 @@ function Index({ color }) {
     return (
         <div className={classes.navbar} style={{ background: color }}>
 
-            <div className={classes.metamenkoLogo}>
+            <div className={classes.metamenkoLogo} onClick={() => { setNavStatus(false); navigate('/') }}>
                 <img src={logo} alt="Metamenko Logo" />
             </div>
 
@@ -23,8 +23,8 @@ function Index({ color }) {
                     <li onClick={() => { setNavStatus(false); navigate('/') }}>HOME</li>
                     <li onClick={() => { setNavStatus(false); navigate('/team') }}>TEAM</li>
                     <li onClick={() => { setNavStatus(false); navigate('/minimap') }}>MINIMAP</li>
-                    <li><img src={discordIcon} /></li>
-                    <li><img src={twitterIcon} /></li>
+                    <li><img src={discordIcon} alt='Discord'/></li>
+                    <li><img src={twitterIcon} alt='Twitter'/></li>
                 </ul>
             </div>
 

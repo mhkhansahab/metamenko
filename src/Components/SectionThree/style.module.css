@@ -143,10 +143,6 @@
         color: rgba(38, 38, 38, 0.4);
     }
 
-    /* .textContent {
-        width: 50%;
-    } */
-
     .imageDetail{
         display: flex;
         align-items: center;
