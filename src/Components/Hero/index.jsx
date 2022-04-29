@@ -12,8 +12,9 @@ function Index() {
       opacity: 1,
       x: 0,
       transition: {
+        delay: .5,
         delayChildren: 0.5,
-        staggerDirection: -1
+        staggerDirection: -1,
       }
     }
   }
@@ -23,6 +24,7 @@ function Index() {
     show: {
       opacity: 1,
       transition: {
+        delay: .5,
         delayChildren: 0.5,
         staggerDirection: -1
       }
@@ -36,7 +38,8 @@ function Index() {
         <motion.div
           variants={containerOne}
           initial="hidden"
-          animate="show">
+          animate="show"
+          >
           <img src={metamenkoLogo} alt='Metamenko Logo' className={classes.metamenkoLogo} />
         </motion.div>
         <motion.div

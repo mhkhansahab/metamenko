@@ -7,10 +7,10 @@ import { motion, useAnimation } from "framer-motion";
 
 function Index({ avatarDetails }) {
     const animation = useAnimation();
-    const [ref, inView] = useInView({ threshold: 0.1 });
+    const [ref, inView] = useInView({ threshold: 0.2 });
 
     const [cardStatus, setCardStatus] = useState({
-        enable: true,
+        enable: false,
         index: 0
     });
 
@@ -23,10 +23,18 @@ function Index({ avatarDetails }) {
     }, [animation, inView]);
 
     function handleClick(index) {
-        setCardStatus({
-            ...cardStatus,
-            index: index
-        })
+        if(cardStatus?.enable){
+
+            setCardStatus({
+                ...cardStatus,
+                index: index
+            })
+        }else{
+            setCardStatus({
+                enable: true,
+                index: index
+            })
+        }
     }
 
     const textVariants = {
@@ -36,6 +44,7 @@ function Index({ avatarDetails }) {
         onscreen: {
             opacity: 1,
             transition: {
+                delay: .3,
                 delayChildren: 0.5,
                 staggerDirection: -1
             }
@@ -46,17 +55,17 @@ function Index({ avatarDetails }) {
     return (
         <div className={classes.section}>
             <motion.div
-                ref={ref}
-                animate={animation}
-                initial="offscreen"
-                whileInView="onscreen"
-                viewport={{ once: true, amount: 0.8 }}
-                transition={{ duration: 0.7 }}
                 className={`${classes.content}`}>
                 <div className={`${classes.heading}`}>
                     BUILT BY GAMERS
                 </div>
                 <motion.div
+                   ref={ref}
+                   animate={animation}
+                   initial="offscreen"
+                   whileInView="onscreen"
+                   viewport={{ once: true, amount: 0.8 }}
+                   transition={{ duration: 0.7 }}
                     variants={textVariants}>
                     <div>Our core team comes from backgrounds in crypto, big-tech, television, and gaming. We’re gamers at heart and are working to build the next frontier of NFTs and gaming.</div>
                 </motion.div>
@@ -72,7 +81,13 @@ function Index({ avatarDetails }) {
                         </div>
                         : null
                 }
-                <motion.div className={classes.avatarContainer}>
+                <motion.div 
+                   ref={ref}
+                   animate={animation}
+                   initial="offscreen"
+                   whileInView="onscreen"
+                   viewport={{ once: true, amount: 0.8 }}
+                   className={classes.avatarContainer}>
                     {
                         avatarDetails?.map((detail, index) => {
                             return <GameCard key={index} name={detail?.name} profession={detail?.profession} img={detail?.img} index={index} handleClick={handleClick} />

@@ -7,7 +7,9 @@ import { motion, useAnimation } from "framer-motion";
 
 function Index() {
     const animation = useAnimation();
-    const [ref, inView] = useInView({ threshold: 0.1 });
+    const animation2 = useAnimation();
+    const [ref, inView] = useInView({ threshold: 0.2 });
+    const [ref2, inView2] = useInView({ threshold: 0.2 });
 
     useEffect(() => {
         if (inView) {
@@ -17,6 +19,14 @@ function Index() {
         }
     }, [animation, inView]);
 
+    useEffect(() => {
+        if (inView) {
+            animation2.start("onscreen");
+        } else {
+            animation2.start("offscreen");
+        }
+    }, [animation2, inView2]);
+
     const textVariants = {
         offscreen: {
             opacity: 0
@@ -24,6 +34,7 @@ function Index() {
         onscreen: {
             opacity: 1,
             transition: {
+                delay: .3,
                 delayChildren: 0.5,
                 staggerDirection: -1
             }
@@ -33,17 +44,17 @@ function Index() {
 
     return (
         <div className={classes.section}>
-            <motion.div
-                ref={ref}
-                animate={animation}
-                initial="offscreen"
-                whileInView="onscreen"
-                viewport={{ once: true, amount: 0.8 }}
-                transition={{ duration: 0.7 }}>
+            <motion.div>
                 <div className={`${classes.heading}`}>
                     THE PORTALS HAVE OPENED
                 </div>
                 <motion.div
+                    ref={ref}
+                    animate={animation}
+                    initial="offscreen"
+                    whileInView="onscreen"
+                    viewport={{ once: true, amount: 0.8 }}
+                    transition={{ duration: 0.8 }}
                     variants={textVariants}
                     className={`${classes.content}`}>
                     <div>Metamenko connects the digital and the physical. </div>
@@ -60,6 +71,12 @@ function Index() {
             <div style={{ marginTop: '50px' }}>
                 <div className={`${classes.heading}`}>UNLOCKING GAMING UTILITY</div>
                 <motion.div
+                    ref={ref2}
+                    animate={animation2}
+                    initial="offscreen"
+                    whileInView="onscreen"
+                    viewport={{ once: true, amount: 0.8 }}
+                    transition={{ duration: 0.8 }}
                     variants={textVariants}
                     className={`${classes.content}`}>
                     <div>Menkos will be needed to participate in our games in the Menkoverse. You’ll accrue rewards and be able to evolve your Menkos, achieving new tiers and updating their base abilities.</div>
