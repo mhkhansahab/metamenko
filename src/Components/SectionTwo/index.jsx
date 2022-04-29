@@ -1,13 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import classes from './style.module.css';
 import GameCard from './../GameCard/index';
+import { useInView } from "react-intersection-observer";
+import { motion, useAnimation } from "framer-motion";
 
 
 function Index({ avatarDetails }) {
+    const animation = useAnimation();
+    const [ref, inView] = useInView({ threshold: 0.1 });
+
     const [cardStatus, setCardStatus] = useState({
         enable: true,
         index: 0
     });
+
+    useEffect(() => {
+        if (inView) {
+            animation.start("onscreen");
+        } else {
+            animation.start("offscreen");
+        }
+    }, [animation, inView]);
 
     function handleClick(index) {
         setCardStatus({
@@ -16,15 +29,37 @@ function Index({ avatarDetails }) {
         })
     }
 
+    const textVariants = {
+        offscreen: {
+            opacity: 0
+        },
+        onscreen: {
+            opacity: 1,
+            transition: {
+                delayChildren: 0.5,
+                staggerDirection: -1
+            }
+        }
+    };
+
+
     return (
         <div className={classes.section}>
-            <div>
+            <motion.div
+                ref={ref}
+                animate={animation}
+                initial="offscreen"
+                whileInView="onscreen"
+                viewport={{ once: true, amount: 0.8 }}
+                transition={{ duration: 0.7 }}
+                className={`${classes.content}`}>
                 <div className={`${classes.heading}`}>
                     BUILT BY GAMERS
                 </div>
-                <div className={`${classes.content}`}>
-                    <div>Our core team comes from backgrounds in crypto, big-tech, television, and gaming working to bridge the intersection of the digital and physical. Our artists come from under-represented communities entering the NFT space for the first time.</div>
-                </div>
+                <motion.div
+                    variants={textVariants}>
+                    <div>Our core team comes from backgrounds in crypto, big-tech, television, and gaming. We’re gamers at heart and are working to build the next frontier of NFTs and gaming.</div>
+                </motion.div>
                 {
                     cardStatus?.enable ?
                         <div className={classes.playerCard}>
@@ -37,15 +72,15 @@ function Index({ avatarDetails }) {
                         </div>
                         : null
                 }
-                <div className={classes.avatarContainer}>
+                <motion.div className={classes.avatarContainer}>
                     {
                         avatarDetails?.map((detail, index) => {
                             return <GameCard key={index} name={detail?.name} profession={detail?.profession} img={detail?.img} index={index} handleClick={handleClick} />
                         })
 
                     }
-                </div>
-            </div>
+                </motion.div>
+            </motion.div>
         </div>
     )
 }

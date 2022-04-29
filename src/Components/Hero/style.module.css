@@ -32,3 +32,8 @@
 .sushiLogo {
     width: 105px;
 }
+.slogan{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

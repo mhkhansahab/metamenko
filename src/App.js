@@ -1,4 +1,4 @@
-import { Routes, Route, Link, useLocation } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import './App.css';
 import Navbar from './Components/Navbar/index';
 import Hero from './Components/Hero/index';
