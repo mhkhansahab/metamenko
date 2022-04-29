@@ -23,7 +23,7 @@ function Index({ avatarDetails }) {
                     BUILT BY GAMERS
                 </div>
                 <div className={`${classes.content}`}>
-                    <div>Our core team comes from backgrounds in crypto, big-tech, television, and gaming. We’re gamers at heart and are working to build the next frontier of NFTs and gaming.</div>
+                    <div>Our core team comes from backgrounds in crypto, big-tech, television, and gaming working to bridge the intersection of the digital and physical. Our artists come from under-represented communities entering the NFT space for the first time.</div>
                 </div>
                 {
                     cardStatus?.enable ?

@@ -1,7 +1,6 @@
 .section{
     display: flex;
     flex-direction: column;
-
 }
 
 .heading{
@@ -23,4 +22,54 @@
 
 .smallSwords{
     text-align: right;
+}
+
+.bigSwords{
+    display: none;
+}
+
+@media screen and (min-width: 720px) {
+    .smallSwords{
+        display: none;
+    }
+
+    .heading, .content{
+        max-width: 340px;
+    }
+
+    .heading{
+        font-size: 50px;
+    }
+
+    .content{
+        font-size: 14px;
+    }
+
+    .bigSwords{
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: -80px;
+    }
+    .bigSwords>img{
+        width: 327px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .heading{
+        font-size: 60px;
+    }
+    .heading, .content{
+        max-width: 500px;
+    }
+    
+    .bigSwords{
+        right: 30px;
+        top: -128px;
+    }
+    .bigSwords>img{
+        width: 523px;
+    }
+
 }

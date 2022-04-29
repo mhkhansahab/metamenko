@@ -19,10 +19,29 @@
     margin-top: 2px;
 }
 
-.img{
+.img {
     margin-top: 8px;
 }
 
-.img > img{
+.img>img {
     width: 68px;
+}
+
+@media screen and (min-width: 720px) {
+    .card{
+        margin: 5px;
+    }
+    .img>img {
+        width: 88px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+
+    .card{
+        margin: 6px;
+    }
+    .img>img {
+        width: 112px;
+    }
 }

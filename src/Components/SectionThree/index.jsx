@@ -39,16 +39,20 @@ function Index({ valuesInfo }) {
                             <img src={cancelIcon} alt="Cancel Icon" className={classes.cancelIcon} onClick={() => setCardStatus({ ...cardStatus, enable: false })} />
                             <div className={classes.index}>{valuesInfo[cardStatus.index]?.index}</div>
                             <div className={classes.title}>{valuesInfo[cardStatus.index]?.title}</div>
-                            <div>
-                                {
-                                    valuesInfo[cardStatus.index]?.content?.map((content, index) => {
-                                        if (content?.bold) {
-                                            return <div key={index} style={{ marginBottom: '0px' }}><b>{content?.text}</b></div>
-                                        } else {
-                                            return <div key={index} >{content?.text}</div>
-                                        }
-                                    })
-                                }
+                            <div className={classes.desktopTitle}>{valuesInfo[cardStatus.index]?.index + ' ' + valuesInfo[cardStatus.index]?.title}</div>
+
+                            <div className={classes.imageDetail}>
+                                <div>
+                                    {
+                                        valuesInfo[cardStatus.index]?.content?.map((content, index) => {
+                                            if (content?.bold) {
+                                                return <div className={classes.textContent} key={index} style={{ marginBottom: '0px' }}><b>{content?.text}</b></div>
+                                            } else {
+                                                return <div className={classes.textContent} key={index} >{content?.text}</div>
+                                            }
+                                        })
+                                    }
+                                </div>
                                 <div className={classes.cardImage}><img src={valuesInfo[cardStatus.index]?.img} /></div>
                             </div>
                         </div>

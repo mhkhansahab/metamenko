@@ -1,8 +1,15 @@
-*{
+* {
     user-select: none;
 }
 
-.bodySection{
+.bodySection {
     background: #F8F8F8;
     padding: 60px 36px;
+    position: relative;
+}
+
+@media screen and (min-width: 720px) {
+    .bodySection {
+        padding: 60px;
+    }
 }
