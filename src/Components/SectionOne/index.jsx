@@ -20,7 +20,7 @@ function Index() {
     }, [animation, inView]);
 
     useEffect(() => {
-        if (inView) {
+        if (inView2) {
             animation2.start("onscreen");
         } else {
             animation2.start("offscreen");
