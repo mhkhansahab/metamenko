@@ -10,9 +10,10 @@ function Index({ name, profession, img, index, handleClick }) {
         onscreen: {
             y: 0,
             transition: {
+                delay: index/7,
                 type: "spring",
                 bounce: 0.4,
-                duration: index / 3,
+                duration: .3,
             }
         }
     };
