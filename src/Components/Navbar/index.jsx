@@ -20,16 +20,15 @@ function Index({ color }) {
 
             <div className={classes.links}>
                 <ul>
-                    <li>MENKOS</li>
-                    <li>GATEWAYS</li>
-                    <li>FOCUS</li>
-                    <li>TEAM</li>
+                    <li onClick={() => { setNavStatus(false); navigate('/') }}>HOME</li>
+                    <li onClick={() => { setNavStatus(false); navigate('/team') }}>TEAM</li>
+                    <li onClick={() => { setNavStatus(false); navigate('/minimap') }}>MINIMAP</li>
                     <li><img src={discordIcon} /></li>
                     <li><img src={twitterIcon} /></li>
                 </ul>
             </div>
 
-            <div className={classes.navIcon} onClick={()=>setNavStatus(true)}>
+            <div className={classes.navIcon} onClick={() => setNavStatus(true)}>
                 <img src={navIcon} alt="Nav Icon" />
             </div>
 
@@ -37,17 +36,17 @@ function Index({ color }) {
                 navStatus ?
                     <div className={classes.mobileNav}>
                         <div className={classes.mobileHeader}>
-                            <div className={classes.metamenkoLogo} onClick={()=>{setNavStatus(false); navigate('/')}}>
+                            <div className={classes.metamenkoLogo} onClick={() => { setNavStatus(false); navigate('/') }}>
                                 <img src={logo} alt="Metamenko Logo" />
                             </div>
-                            <div className={classes.navIcon} onClick={()=>setNavStatus(false)}>
+                            <div className={classes.navIcon} onClick={() => setNavStatus(false)}>
                                 <img src={cancelIcon} alt="Cancel Icon" />
                             </div>
                         </div>
                         <div className={classes.mobileLinks}>
-                            <div onClick={()=>{setNavStatus(false); navigate('/')}}>HOME</div>
-                            <div onClick={()=>{setNavStatus(false); navigate('/team')}}>TEAM</div>
-                            <div onClick={()=>{setNavStatus(false); navigate('/minimap')}}>MINIMAP</div>
+                            <div onClick={() => { setNavStatus(false); navigate('/') }}>HOME</div>
+                            <div onClick={() => { setNavStatus(false); navigate('/team') }}>TEAM</div>
+                            <div onClick={() => { setNavStatus(false); navigate('/minimap') }}>MINIMAP</div>
                             <div className={classes.specialLink}>
                                 <div>DISCORD</div>
                                 <img src={discordIcon} alt='Discord Icon' />
